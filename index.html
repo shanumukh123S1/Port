@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shanmukha Pogathota — Portfolio</title>
+  <style>
+    /* ----------------- Reset & base ----------------- */
+    :root{
+      --bg:#0f1720;
+      --card:#0f1b26;
+      --muted:#9aa6b3;
+      --accent:#13c6d8;
+      --accent-2:#d17ad5;
+      --glass:rgba(255,255,255,0.03);
+      --radius:14px;
+      --card-radius:18px;
+      --max-w:1100px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#08101a 0%, #0f1720 100%);color:#e6eef6}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--max-w);margin:0 auto;padding:28px}
+
+    /* ----------------- header ----------------- */
+    header{position:sticky;top:0;z-index:40;background:linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,.15));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700}
+    .brand h1{margin:0;font-size:18px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:#e6eef6;opacity:.9}
+
+    /* ----------------- hero ----------------- */
+    .hero{padding:70px 0 90px;text-align:center}
+    .hero h2{font-size:44px;margin:6px 0;line-height:1.05}
+    .hero p{max-width:740px;margin:18px auto;color:var(--muted)}
+    .btn{display:inline-block;background:var(--accent);color:#042028;padding:12px 22px;border-radius:26px;font-weight:600;margin-top:18px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+
+    /* ----------------- sections ----------------- */
+    section{padding:48px 0}
+    .section-title{text-align:center;margin-bottom:26px}
+    .section-title h3{margin:0;font-size:28px}
+    .underline{width:70px;height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin:10px auto;border-radius:6px}
+
+    .about-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:var(--card-radius);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02);max-width:920px;margin:0 auto;color:var(--muted)}
+
+    /* skills grid */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:900px;margin:22px auto}
+    .skill{background:var(--glass);padding:20px;border-radius:12px;text-align:center;color:var(--muted);box-shadow:0 6px 14px rgba(2,6,23,0.6)}
+
+    /* projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:20px auto}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6);min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+    .project h4{margin:0 0 8px}
+    .project p{color:var(--muted);font-size:14px}
+    .live{display:inline-block;background:var(--accent);color:#042028;padding:8px 14px;border-radius:14px;margin-top:12px}
+
+    /* contact */
+    .contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:var(--card-radius);max-width:900px;margin:14px auto;color:var(--muted);text-align:center}
+
+    footer{text-align:center;padding:20px;color:var(--muted)}
+
+    /* small demo card for mobile-like look */
+    .hero-sub{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:18px}
+
+    /* small screens tweaks */
+    @media(min-width:900px){
+      .hero h2{font-size:56px}
+    }
+
+    /* quick fancier touches */
+    .accent-dot{height:8px;width:8px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:8px}
+
+    /* accessibility focus */
+    a:focus,.btn:focus,.live:focus{outline:3px solid rgba(19,198,216,0.18)}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div>
+          <h1>Shanmukha Pogathota</h1>
+          <div style="font-size:12px;color:var(--muted)">Full‑Stack Developer</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h2>Hi, I'm <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent">Shanmukha Pogathota</span></h2>
+      <p>A passionate <strong>Full‑Stack Developer</strong> who creates beautiful, fast, and scalable web applications using HTML, CSS, JavaScript, React, and Node.js.</p>
+      <div class="hero-sub">
+        <a class="btn" href="#projects">View My Work</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-title">
+        <h3>About Me</h3>
+        <div class="underline"></div>
+      </div>
+      <div class="about-card">
+        I am a developer who loves solving real‑world problems with technology. My focus lies in crafting elegant user interfaces, building efficient backend systems, and integrating them into seamless applications. I'm always eager to learn new technologies and contribute to impactful projects.
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h3>Skills</h3>
+        <div class="underline"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill">HTML5 / CSS3 / JavaScript</div>
+        <div class="skill">React.js / Node.js / Express.js</div>
+        <div class="skill">MongoDB / SQL</div>
+        <div class="skill">Git / GitHub</div>
+        <div class="skill">Java / Python (Programming Languages)</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h3>Projects</h3>
+        <div class="underline"></div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Question Bank Management (replaces Weather App) -->
+        <div class="project">
+          <div>
+            <h4>📚 Question Bank Management</h4>
+            <p>A small Question Bank tool to add, edit, delete and search questions. Supports categories and stores data locally (demo).</p>
+          </div>
+          <div style="text-align:right">
+            <button class="live" onclick="openDemo('questionBank')">Live Demo</button>
+          </div>
+        </div>
+
+        <!-- Student Registration -->
+        <div class="project">
+          <div>
+            <h4>📝 Student Registration Form</h4>
+            <p>A responsive and secure student registration form built using HTML, CSS, and JavaScript with validation and local storage features.</p>
+          </div>
+          <div style="text-align:right">
+            <button class="live" onclick="openDemo('registration')">Live Demo</button>
+          </div>
+        </div>
+
+        <!-- Counter App -->
+        <div class="project">
+          <div>
+            <h4>🔢 Counter App</h4>
+            <p>A simple yet elegant counter app that demonstrates DOM manipulation and smooth UI interactions using JavaScript.</p>
+          </div>
+          <div style="text-align:right">
+            <button class="live" onclick="openDemo('counter')">Live Demo</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h3>Contact</h3>
+        <div class="underline"></div>
+      </div>
+      <div class="contact-card">
+        Feel free to reach out for collaboration or opportunities!<br>
+        Email: <strong>shanmukha.pogathota@example.com</strong><br>
+        Location: Tadepalligudem, India
+        <div style="margin-top:16px"><a class="btn" href="mailto:shanmukha.pogathota@example.com">Send Message</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 Shanmukha Pogathota — Full‑Stack Developer
+  </footer>
+
+  <script>
+    // Opens a new window and writes the HTML for each demo (self-contained). This way the portfolio is a single file
+    function openDemo(which){
+      let html = '';
+      if(which === 'questionBank'){
+        html = `<!doctype html>
+        <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Question Bank - Demo</title>
+        <style>body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;background:linear-gradient(180deg,#b3f0ff,#c5ffd8);color:#052;display:flex;align-items:center;justify-content:center;height:100vh}
+        .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.15);width:92%;max-width:900px}
+        h1{margin:0 0 8px}
+        form{display:flex;gap:8px;flex-wrap:wrap}
+        input[type=text],select,textarea{flex:1;padding:8px;border-radius:6px;border:1px solid #bbb}
+        .controls{display:flex;gap:8px;margin-top:10px}
+        button{padding:8px 10px;border-radius:8px;border:none;background:#13c6d8;color:#042;cursor:pointer}
+        table{width:100%;border-collapse:collapse;margin-top:12px}
+        th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+        .small{font-size:13px;color:#456}
+        </style>
+        </head><body>
+        <div class="card">
+          <h1>Question Bank (Demo)</h1>
+          <div class="small">Add and manage questions locally (data stored in your browser).</div>
+          <form id="qForm" onsubmit="return false">
+            <input id="qText" type="text" placeholder="Question text" required>
+            <select id="qCategory"><option value="General">General</option><option value="Math">Math</option><option value="Science">Science</option></select>
+            <input id="qAnswer" type="text" placeholder="Answer">
+            <div style="width:100%" class="controls">
+              <button id="addBtn">Add Question</button>
+              <button id="clearBtn" type="button">Clear All</button>
+              <input id="search" placeholder="Search..." style="flex:1;padding:8px;border-radius:6px;border:1px solid #bbb">
+            </div>
+          </form>
+          <table id="qTable"><thead><tr><th>Question</th><th>Category</th><th>Answer</th><th>Actions</th></tr></thead><tbody></tbody></table>
+        </div>
+        <script>
+          const STORAGE_KEY = 'demo_question_bank_v1';
+          let questions = JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+          const tbody = document.querySelector('#qTable tbody');
+          const qText = document.getElementById('qText');
+          const qCategory = document.getElementById('qCategory');
+          const qAnswer = document.getElementById('qAnswer');
+          const search = document.getElementById('search');
+
+          function render(list){
+            tbody.innerHTML = '';
+            list.forEach(function(q,idx){
+              var tr = document.createElement('tr');
+              var rowHtml = '<td>' + escapeHtml(q.text) + '</td>' +
+                            '<td>' + escapeHtml(q.category) + '</td>' +
+                            '<td>' + escapeHtml(q.answer || '') + '</td>' +
+                            '<td><button data-idx="' + idx + '" class="del">Delete</button></td>';
+              tr.innerHTML = rowHtml;
+              tbody.appendChild(tr);
+            });
+            attachDelete();
+          }
+          function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+          function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(questions));render(questions)}
+
+          document.addEventListener('click', function(e){
+            if(e.target && e.target.id === 'addBtn'){
+              e.preventDefault();
+              var t = qText.value.trim(); if(!t) return alert('Please enter a question');
+              questions.unshift({text:t,category:qCategory.value,answer:qAnswer.value.trim()});
+              qText.value='';qAnswer.value='';save();
+            }
+            if(e.target && e.target.classList && e.target.classList.contains('del')){
+              var i = +e.target.getAttribute('data-idx'); if(confirm('Delete this question?')){questions.splice(i,1);save();}
+            }
+            if(e.target && e.target.id === 'clearBtn'){
+              if(confirm('Clear all questions?')){questions=[];save();}
+            }
+          });
+
+          search.addEventListener('input',function(){
+            var q = search.value.trim().toLowerCase();
+            if(!q) render(questions);
+            else render(questions.filter(function(x){ return (x.text||'').toLowerCase().includes(q) || (x.category||'').toLowerCase().includes(q) || (x.answer||'').toLowerCase().includes(q); }));
+          });
+
+          // initial
+          save();
+        <\/script>
+        </body></html>`;
+      }
+
+      if(which === 'registration'){
+        html = `<!doctype html>
+        <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Student Registration - Demo</title>
+        <style>body{font-family:Georgia,serif;background:#e9f0f4;margin:0;padding:30px;display:flex;align-items:flex-start;justify-content:center}
+        .form-wrap{background:#dffd5b;padding:18px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.12);width:360px}
+        label{display:block;margin-top:8px}
+        input[type=text],input[type=email],input[type=password],select,textarea{width:100%;padding:8px;border-radius:4px;border:1px solid #999}
+        .actions{display:flex;gap:8px;margin-top:12px}
+        .btn{padding:8px 10px;border-radius:6px;border:none;cursor:pointer}
+        .btn-primary{background:#4ecdc4}
+        .btn-danger{background:#ff4d4d}
+        </style>
+        </head><body>
+        <div class="form-wrap">
+          <h2>Student Registration Form</h2>
+          <form id="regForm" onsubmit="return false">
+            <label>Full Name:<input id="name" type="text" required></label>
+            <label>Email:<input id="email" type="email" required></label>
+            <label>Password:<input id="pwd" type="password" required></label>
+            <label>Date of Birth:<input id="dob" type="date"></label>
+            <label>Gender:<br><label><input type="radio" name="g" value="Male"> Male</label> <label><input type="radio" name="g" value="Female"> Female</label></label>
+            <label>Department:<select id="dept"><option>--Select--</option><option>CS</option><option>IT</option><option>ECE</option></select></label>
+            <label>Skills:<br><label><input type="checkbox" value="HTML"> HTML</label> <label><input type="checkbox" value="CSS"> CSS</label> <label><input type="checkbox" value="JS"> JavaScript</label></label>
+            <label>Address:<textarea id="addr" rows="3"></textarea></label>
+            <div class="actions"><button class="btn btn-primary" id="regBtn">Register</button><button class="btn btn-danger" id="resetBtn" type="button">Reset</button></div>
+          </form>
+          <div id="msg" style="margin-top:10px;color:#024"></div>
+        </div>
+        <script>
+          var regBtn = document.getElementById('regBtn');
+          var resetBtn = document.getElementById('resetBtn');
+          regBtn.addEventListener('click',function(e){
+            e.preventDefault();
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var pwd = document.getElementById('pwd').value;
+            if(!name||!email||!pwd){document.getElementById('msg').textContent='Please fill required fields';return}
+            var data = {name:name,email:email,dob:document.getElementById('dob').value,dept:document.getElementById('dept').value,address:document.getElementById('addr').value};
+            // store demo
+            var arr = JSON.parse(localStorage.getItem('demo_students')||'[]');arr.push(data);localStorage.setItem('demo_students',JSON.stringify(arr));
+            document.getElementById('msg').textContent='Registered successfully (demo saved locally)';
+            document.getElementById('regForm').reset();
+          });
+          resetBtn.addEventListener('click',function(){document.getElementById('regForm').reset();document.getElementById('msg').textContent='';});
+        <\/script>
+        </body></html>`;
+      }
+
+      if(which === 'counter'){
+        html = `<!doctype html>
+        <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Counter - Demo</title>
+        <style>body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#7b3a99,#9be97b)}
+        .box{background:#7b2bb1;padding:24px;border-radius:12px;color:#fff;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+        h1{margin:0 0 10px}
+        .count{font-size:48px;margin:12px 0}
+        button{padding:8px 12px;border-radius:8px;border:none;margin:0 8px;cursor:pointer}
+        .add{background:#198754;color:#fff}
+        .sub{background:#d63333;color:#fff}
+        .reset{background:#ffe8d6;color:#042}
+        </style>
+        </head><body>
+        <div class="box"><h1>Counter App</h1><div id="count" class="count">0</div><div><button class="add" id="addBtn">Add</button><button class="reset" id="resetBtn">Reset</button><button class="sub" id="subBtn">Sub</button></div></div>
+        <script>
+          var c = 0; var el = document.getElementById('count');
+          document.getElementById('addBtn').addEventListener('click',function(){c++;el.textContent=c});
+          document.getElementById('subBtn').addEventListener('click',function(){c--;el.textContent=c});
+          document.getElementById('resetBtn').addEventListener('click',function(){c=0;el.textContent=c});
+        <\/script>
+        </body></html>`;
+      }
+
+      // open the demo in a new window and write the HTML
+      var w = window.open('about:blank','_blank');
+      if(!w){alert('Popup blocked — allow popups for this site to open demos.');return}
+      // Use a Blob to avoid issues with document.write and escaping
+      var blob = new Blob([html], { type: 'text/html' });
+      var url = URL.createObjectURL(blob);
+      w.location.href = url;
+    }
+  </script>
+</body>
+</html>
