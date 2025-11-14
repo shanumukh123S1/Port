@@ -42,7 +42,15 @@
     .hero h2{font-size:44px;margin:6px 0;line-height:1.05}
     .hero p{max-width:740px;margin:18px auto;color:var(--muted)}
     .btn{display:inline-block;background:var(--accent);color:#042028;padding:12px 22px;border-radius:26px;font-weight:600;margin-top:18px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
-
+    /* ----------------- Profile Photo ----------------- */
+.profile-pic{
+  width:150px;height:150px;
+  border-radius:50%;
+  border:4px solid rgba(255,255,255,0.2);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  object-fit:cover;
+  margin-bottom:20px;
+}
     /* ----------------- sections ----------------- */
     section{padding:48px 0}
     .section-title{text-align:center;margin-bottom:26px}
@@ -106,6 +114,7 @@
 
   <main class="wrap">
     <section class="hero">
+       <img src="ph.jpg" alt="Profile Photo" class="profile-pic">
       <h2>Hi, I'm <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent">Shanmukha Pogathota</span></h2>
       <p>A passionate <strong>Full‑Stack Developer</strong> who creates beautiful, fast, and scalable web applications using HTML, CSS, JavaScript, React, and Node.js.</p>
       <div class="hero-sub">
@@ -193,11 +202,6 @@
       </div>
     </section>
 
-  </main>
-
-  <footer>
-    © 2025 Shanmukha Pogathota — Full‑Stack Developer
-  </footer>
 
   <script>
     // Opens a new window and writes the HTML for each demo (self-contained). This way the portfolio is a single file
@@ -366,5 +370,10 @@
       w.location.href = url;
     }
   </script>
+    </main>
+<footer>
+  © 2025 Shanmukha Pogathota — Full-Stack Developer
+</footer>
 </body>
 </html>
+
