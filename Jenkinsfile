@@ -3,16 +3,22 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                bat 'dir'
+                echo 'Downloading Code'
             }
         }
 
-        stage('Deploy') {
+        stage('Build Docker Image') {
             steps {
-                bat 'if not exist deployed mkdir deployed'
-                bat 'copy index.html deployed'
+                bat 'docker build -t portfolio .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                bat 'docker rm -f portfolio-container || exit 0'
+                bat 'docker run -d --name portfolio-container -p 80:80 portfolio'
             }
         }
     }
