@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                echo 'Downloading Code'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t portfolio .'
