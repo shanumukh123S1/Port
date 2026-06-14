@@ -11,14 +11,14 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t portfolio .'
+                sh 'docker build -t portfolio .'
             }
         }
 
         stage('Run Container') {
             steps {
-                bat 'docker rm -f portfolio-container || exit 0'
-                bat 'docker run -d --name portfolio-container -p 80:80 portfolio'
+                sh 'docker rm -f portfolio-container || true'
+                sh 'docker run -d --name portfolio-container -p 80:80 portfolio'
             }
         }
     }
