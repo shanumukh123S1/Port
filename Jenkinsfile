@@ -18,7 +18,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh 'docker rm -f portfolio-container || true'
-                sh 'docker run -d --name portfolio-container -p 80:80 portfolio'
+                sh 'docker run -d --restart unless-stopped --name portfolio-container -p 80:80 portfolio'
             }
         }
     }
